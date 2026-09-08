@@ -23,7 +23,7 @@ class ImageController extends Controller
     {
 
         $validator = Validator::make($request->all(), [
-            'image' => 'bail|required|file|mimeTypes:image/jpeg,image/png,image/gif,image/bmp,image/heic|max:300000',
+            'image' => 'bail|required|file|mimeTypes:image/jpeg,image/png,image/gif,image/bmp,image/heic,application/pdf|max:300000',
         ]);
 
         if ($validator->fails()) {
@@ -86,7 +86,7 @@ class ImageController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'images' => 'array|bail|required',
-            'images.*' => 'file|mimeTypes:image/jpeg,image/png,image/gif,image/bmp,image/heif,image/heic|max:300000'
+            'images.*' => 'file|mimeTypes:image/jpeg,image/png,image/gif,image/bmp,image/heif,image/heic,application/pdf|max:300000'
         ]);
 
         if ($validator->fails()) {
